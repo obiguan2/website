@@ -1,0 +1,51 @@
+<!-- Top menu -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" [routerLink]="['home']"><img src="assets/icon/bus1.png" alt="icono" width="40" height="40"></a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="navbarColor02" style="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['home']">Inicio</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tabla-De-Contenido</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+          <a class="dropdown-item" [routerLink]="['main']">Introducción</a>
+          <a class="dropdown-item" [routerLink]="['main']">Antecedentes</a>
+          <a class="dropdown-item" [routerLink]="['main']">Planteamiento del problema</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['main']">Árbol de problemas</a>
+          <a class="dropdown-item" [routerLink]="['main']">Formulación del problema</a>
+          <a class="dropdown-item" [routerLink]="['main']">Proposito del estudio</a>
+          <a class="dropdown-item" [routerLink]="['main']">Metodos de investigación</a>
+          <a class="dropdown-item" [routerLink]="['main']">Planificación</a>
+        </div>
+      </li>
+      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['theory']">Marco-Teorico</a></li>
+      <li class="nav-item dropdown show">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Desarrollo</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+          <a class="dropdown-item" [routerLink]="['developing']">Introducción</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Casos de uso de negocio y sistema</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Diagramas UML</h6>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de actividad</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de maquina de estados</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de ecuencia</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de Comunicación</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de Modelado</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de tiempos</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de Clase</a>
+          <a class="dropdown-item" [routerLink]="['developing']">Diagramas de Objetos</a>
+        </div>
+      </li>
+      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['conclusions']">Conclusiones</a></li>
+      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['about']">Acerca de</a></li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Buscar....">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
