@@ -13,7 +13,11 @@ import { MainComponent } from './components/main/main.component';
 import { DevelopingComponent } from './components/developing/developing.component';
 import { TheoryComponent } from './components/theory/theory.component';
 import { ConclusionsComponent } from './components/conclusions/conclusions.component';
-
+// forms
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+// google MAP
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { ConclusionsComponent } from './components/conclusions/conclusions.compo
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule,
+    HttpModule,
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyBNRWW7vqg8E6TPvFFc3Tq6Exhga8U3dAU' })
   ],
   providers: [],
   bootstrap: [AppComponent]

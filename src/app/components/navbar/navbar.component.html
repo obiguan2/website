@@ -1,13 +1,14 @@
 <!-- Top menu -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" [routerLink]="['home']"><img src="assets/icon/bus1.png" alt="icono" width="40" height="40"></a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+  <a (click)="toggleOff()" class="navbar-brand" [routerLink]="['home']"><img src="assets/icon/bus1.png" alt="icono" width="40" height="40"></a>
+  <button (click)="toggleCollapse()" class="navbar-toggler collapsed" type="button" data-target="#minavbar" aria-controls="minavbar" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- <button (click)="toggleOn()" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#minavbar" aria-controls="minavbar" aria-expanded="false" aria-label="Toggle navigation"> -->
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-collapse collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['home']">Inicio</a></li>
+  <div class="navbar-collapse collapse" id="minavbar" [class.show]="show">
+    <ul class="navbar-nav mr-auto text-center">
+      <li (click)="toggleCollapse()" class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['home']">Inicio</a></li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tabla-De-Contenido</a>
         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
@@ -22,7 +23,7 @@
           <a class="dropdown-item" [routerLink]="['main']">Planificación</a>
         </div>
       </li>
-      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['theory']">Marco-Teorico</a></li>
+      <li (click)="toggleCollapse()" class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['theory']">Marco-Teorico</a></li>
       <li class="nav-item dropdown show">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Desarrollo</a>
         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
@@ -40,12 +41,12 @@
           <a class="dropdown-item" [routerLink]="['developing']">Diagramas de Objetos</a>
         </div>
       </li>
-      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['conclusions']">Conclusiones</a></li>
-      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['about']">Acerca de</a></li>
+      <li (click)="toggleCollapse()" class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['conclusions']">Conclusiones</a></li>
+      <li (click)="toggleCollapse()" class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['about']">Acerca de</a></li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Buscar....">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+      <input class="form-control mr-sm-2 col-6 col-lg-auto" type="text" placeholder="Buscar....">
+      <button class="btn btn-primary my-2 my-sm-0 col-2 col-lg-auto" type="submit">Buscar</button>
     </form>
   </div>
 </nav>

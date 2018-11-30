@@ -1,6 +1,5 @@
 // ng2-routes
 import { RouterModule, Routes } from '@angular/router';
-import { Component } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { MainComponent } from './components/main/main.component';

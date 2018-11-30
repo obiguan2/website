@@ -1,6 +1,11 @@
 <div class="row">
-    <h1 class="mx-auto animated fadeIn"><span>TERMINAL DE BUSES DE LA PAZ</span></h1>
-        <div class="col-md-8 animated fadeIn fast">
+    <h1 class="mx-auto animated fadeIn"><span class="text-muted">Empresa </span>OBIGUAN</h1>
+</div>
+<div class="row">
+    <h5 class="mx-auto animated">Venta y reserva de boletos</h5>
+</div>
+<div class="row">
+        <div class="col-md-12 col-lg-8 animated fadeIn fast mb-3">
             <div class="carousel slide" id="demo" data-ride="carousel">
                 <!--indicadores-->
                 <ul class="carousel-indicators">
@@ -14,29 +19,29 @@
                     <div class="carousel-item active">
                         <img src="assets/img/img1.jpeg" alt="imagen1" class="img-fluid d-block w-100">
                         <div class="carousel-caption">
-                            <h3>primer titulo</h3>
-                            <p>Esta es la descripcion de la imagen 1</p>
+                            <h3>TERMINAL DE BUSES</h3>
+                            <p>Esta ubicada en la ciudad de LA PAZ</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="assets/img/img2.jpeg" alt="imagen2" class="img-fluid d-block w-100">
                         <div class="carousel-caption">
-                            <h3>segundo titulo</h3>
-                           <p>Esta es la descripcion de la imagen 2</p>
+                            <h3>DISTINTOS TIPO DE BUSES</h3>
+                           <p>Tenemos varios tipos de buses para viajar</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="assets/img/img3.jpeg" alt="imagen3" class="img-fluid d-block w-100">
                         <div class="carousel-caption">
-                            <h3>tercer titulo</h3>
-                            <p>Esta es la descripcion de la imagen 3</p>
+                            <h3>LA TERMINAL TIENE VARIAS TIENDAS</h3>
+                            <p>Donde uno puede comprar muchas cosas necesarias para el viaje</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="assets/img/img4.jpeg" alt="imagen4" class="img-fluid d-block w-100">
                         <div class="carousel-caption">
-                            <h3>cuarto titulo</h3>
-                            <p>Esta es la descripcion de la imagen 4</p>
+                            <h3>Asientos de espera</h3>
+                            <p>Posee asientos de espera</p>
                            </div>
                     </div>
                 </div>
@@ -46,24 +51,210 @@
             </div>
         </div>
 
-        <div class="col-md-4 card border-primary mb-3 animated fadeIn fast">
-            <form>
-                <fieldset>
-                    <legend class="pt-4"><h2>CONTÁCTANOS</h2></legend>
-                    <div class="form-group">
-                        <label class="col-form-label col-form-label-lg" for="inputLarge">Nombre</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="Nombre *" id="inputLarge">
-                    
-                        <label for="exampleInputEmail1">Correo Electronico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail *">
-                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
-                    
-                        <label for="exampleTextarea">Mensaje</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Mensaje *"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                </fieldset>
-            </form>
+        <div class="card border-primary mb-3 col-md-12 col-lg-4 my-auto">
+            <h2 class="pt-3">obiguan.com</h2>
+            <p><small>Obiguan es una empresa líder de transacciones en línea que usa tecnología inovadora para permitir a sus clientes planificar, buscar, comparar y comprar una amplia gama de pasajes en bus. Obiguan tiene un acuerdo comprehensivo con operadores de bus y otros proveedores de servicios turísticos para asegurar que todos nuestros clientes tengan una gran experiencia.</small></p>
+            <p><small>Obiguan se en foca en el mercado boliviano pero sus clientes son principalmente turistas extranjeros y visitantes que buscan la mejor experiencia de viaje posible</small></p>
+            <hr class="mb-4">
+            <p>Servicios de viaje en línea</p>
+            <a class="btn btn-primary mb-2" [routerLink]="['/about']" role="button">Ver más</a>
         </div>
+  
 </div>
-<br>
+<div class="row">
+    <!-- GOOGLE MAP -->
+    <div class="col-md-12 col-lg-6">
+        <h3>Terminal de Buses La Paz</h3>
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+    </div>
+    <!-- TABS -->
+    <div class="col-md-12 col-lg-6 py-3">
+        <ul class="nav nav-tabs justify-content-center mx-auto">
+            <li class="nav-item">
+            <a class="nav-link btn-outline-primary active show" data-toggle="tab" href="#hacer_reserva">HACER RESERVA</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link btn-outline-primary" data-toggle="tab" href="#modificar_reserva">MODIFICAR RESERVA</a>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active show" id="hacer_reserva">
+                <!-- FORMULARIOS -->
+                <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate class="row">
+                    <label class="col-12 col-form-label">DATOS PERSONALES : </label>
+                    <!-- TIPO -->
+                    <div class="form-group col-12 p-0">
+                            <label class="col-12 col-form-label">Tipo de viaje : </label>
+                            <div *ngFor="let tipo of tipos" class="custom-control custom-radio custom-control-inline">
+                                <input
+                                [(ngModel)]="usuario.tipo"
+                                type="radio"
+                                name="tipos"
+                                [id]="tipo"
+                                [value]="tipo"
+                                class="custom-control-input"
+                                required
+                                />
+                                <label class="custom-control-label" [for]="tipo">{{ tipo }}</label>
+                            </div>
+                    </div>
+                    <!-- ORIGEN -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Origen de : </label>
+                        <select 
+                            class="form-control" 
+                            [(ngModel)]="usuario.origen"
+                            name="origen"
+                            required
+                        >
+                            <option value="">Seleccione un origen</option>   
+                            <option *ngFor="let origen of origenes" [value]="origen.nombre">{{origen.nombre}}</option>
+                        </select>
+                    </div>
+                    <!-- DESTINO -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Destino a : </label>
+                        <select
+                            class="form-control"
+                            [(ngModel)]="usuario.destino"
+                            name="destino"
+                            required
+                        >
+                            <option value="">Seleccione un destino</option>
+                            <option *ngFor="let destino of destinos" [value]="destino.nombre">{{
+                            destino.nombre
+                            }}</option>
+                        </select>
+                    </div>
+                    <!-- FECHA SALIDA -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Fecha de salida:</label>
+                        <input 
+                        type="date" 
+                        class="form-control" 
+                        name="fecha"
+                        [(ngModel)]="usuario.fecha"
+                        #fecha="ngModel"
+                        required
+                        />
+                    </div>
+                    <!-- NUMERO DE BOLETOS -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Numero de Boletos : </label>
+                        <input 
+                            type="number"
+                            class="form-control"
+                            name="nboletos"
+                            [value]="1"
+                            min="1"
+                            max="10"
+                            pattern="^[0-9]+"
+                            [(ngModel)]="usuario.nboletos"
+                            #nboletos="ngModel"
+                            required
+                        />
+                    </div>
+                    <label class="col-12 col-form-label">DATOS PERSONALES : </label>
+                    <!-- NOMBRE -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Nombre</label>
+                            <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Nombre"
+                            name="nombre"
+                            [(ngModel)]="usuario.nombre"
+                            minlength="5"
+                            required
+                            #nombre="ngModel"
+                            />
+                            <!-- error nombre -->
+                            <small *ngIf="nombre.errors?.required">Este campo es requerido.</small>
+                            <small *ngIf="nombre.errors?.minlength">
+                            Por los menos {{ nombre.errors.minlength.requiredLength }} caracteres.
+                            </small>
+                    </div>
+                        <!-- APELLIDO -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Apellido</label>
+                            <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Apellido"
+                            name="apellido"
+                            [(ngModel)]="usuario.apellido"
+                            required
+                            #apellido="ngModel"
+                            />
+                            <!-- error apellido -->
+                            <small *ngIf="apellido.errors?.required">Este campo es requerido</small>
+                    </div>
+                    <!-- CORREO -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">Correo</label>
+                        <input
+                            class="form-control"
+                            type="email"
+                            placeholder="Correo electrónico"
+                            name="correo"
+                            [(ngModel)]="usuario.correo"
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            #correo="ngModel"
+                        />
+                        <!-- Expresion regular para validar el correo PATTERN -->
+                        <!-- error email -->
+                        <small *ngIf="correo.errors?.required">Este campo es requerido</small>
+                        <small *ngIf="correo.errors?.pattern">El campo no tiene formato</small>
+                    </div>
+                    <!-- NIT -->
+                    <div class="form-group col-12 col-md-6">
+                        <label class="col-12 col-form-label">CI, Pasaporte o Nit</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="CI, Pasaporte o Nit" 
+                            name="nit"
+                            [(ngModel)]="usuario.nit"
+                            #nit="ngModel"
+                            pattern="^(([A-Z]{3})([-]?)(\d{6,7})([-]?)([A-Z]{1}))$|^((\d{7,8}))$"
+                            required
+                        />
+                        <!--^[0-9,$]*$ -->
+                        <!-- error nit -->
+                        <small *ngIf="nit.errors?.required">Este campo es requerido</small>
+                        <small *ngIf="nit.errors?.pattern">El campo no tiene formato</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-12 col-form-label">&nbsp;</label>
+                        <div class="input-group col-md-8">
+                            <button
+                            [disabled]="!forma.valid"
+                            type="submit"
+                            class="btn btn-outline-primary"
+                            >
+                            Guardar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="modificar_reserva">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+            </div>
+        </div>
+    </div>
+    <!-- FIN TABS -->
+
+
+    <!-- FORMULARIO -->
+    <div class="row p-5">
+        <pre class="p-3">
+        {{ usuario | json }}
+        </pre>
+    </div>
+</div>
+

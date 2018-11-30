@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +6,18 @@ import * as $ from 'jquery';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  show: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
 
+  }
+  // funcion para ocultar toggler
+  toggleCollapse() {
+    this.show = !this.show;
+  }
+  toggleOff(){
+    this.show = false;
   }
 }
