@@ -1,0 +1,55 @@
+<form (ngSubmit)="buscar(forma)" #forma="ngForm" novalidate class="row">
+  <!-- NIT -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">CI, Pasaporte o Nit : </div>
+      <input 
+          type="text" 
+          class="form-control" 
+          placeholder="CI, Pasaporte o Nit" 
+          name="nit"
+          [(ngModel)]="usuario.nit"
+          #nit="ngModel"
+          pattern="^(([A-Z]{3})([-]?)(\d{6,7})([-]?)([A-Z]{1}))$|^((\d{7,8}))$"
+          required
+      />
+      <!--^[0-9,$]*$ -->
+      <!-- error nit -->
+      <small *ngIf="nit.errors?.required">Este campo es requerido</small>
+      <small *ngIf="nit.errors?.pattern">El campo no tiene formato</small>
+  </div>
+  <!-- CODIGO -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Codigo de seguridad : </div>
+      <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Codigo de seguridad" 
+          name="codigo"
+          [(ngModel)]="usuario.codigo"
+          #codigo="ngModel"
+          pattern="^([A-Z0-9]){5}"
+          required
+      />
+      <!--^[0-9,$]*$ -->
+      <!-- error nit -->
+      <small *ngIf="codigo.errors?.required">Este campo es requerido</small>
+      <small *ngIf="codigo.errors?.pattern">El campo no tiene formato</small>
+  </div>
+  <div class="form-group pt-2">
+      <div class="input-group col-md-8">
+          <button
+          [disabled]="!forma.valid"
+          type="submit"
+          class="btn btn-outline-primary"
+          >
+          Buscar
+          </button>
+      </div>
+  </div>
+</form>
+<div *ngIf="editando; else nouser">
+    <app-form-actualizar1></app-form-actualizar1>
+</div>
+<ng-template #nouser>
+    <small> {{ mensaje }} </small>
+</ng-template>

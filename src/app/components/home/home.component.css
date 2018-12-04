@@ -4,3 +4,10 @@
 agm-map{
     height: 300px;
 }
+.fondoDes {
+    background: rgb(235, 235, 235);
+}
+.fondoForm {
+    /* background: rgb(211, 208, 207); */
+    background: rgb(235, 235, 235);
+}

@@ -13,11 +13,21 @@ import { MainComponent } from './components/main/main.component';
 import { DevelopingComponent } from './components/developing/developing.component';
 import { TheoryComponent } from './components/theory/theory.component';
 import { ConclusionsComponent } from './components/conclusions/conclusions.component';
+import { FormComponent } from './components/form/form.component';
 // forms
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // google MAP
 import { AgmCoreModule } from '@agm/core';
+import { FormBuscarComponent } from './components/form-buscar/form-buscar.component';
+import { FormEliminarComponent } from './components/form-eliminar/form-eliminar.component';
+import { ListComponent } from './components/list/list.component';
+// firebase
+import { AngularFireModule } from '@angular/fire';  // para conectarnos
+import { environment } from '../environments/environment';  // donde se encuentra nuestras configuraciones
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { FormActualizarComponent } from './components/form-actualizar/form-actualizar.component';
+import { FormActualizar1Component } from './components/form-actualizar1/form-actualizar1.component'; // para editar eliminar etc
 
 @NgModule({
   declarations: [
@@ -29,14 +39,22 @@ import { AgmCoreModule } from '@agm/core';
     MainComponent,
     DevelopingComponent,
     TheoryComponent,
-    ConclusionsComponent
+    ConclusionsComponent,
+    FormComponent,
+    FormBuscarComponent,
+    FormEliminarComponent,
+    ListComponent,
+    FormActualizarComponent,
+    FormActualizar1Component
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
     FormsModule,
     HttpModule,
-    AgmCoreModule.forRoot({ apiKey: 'AIzaSyBNRWW7vqg8E6TPvFFc3Tq6Exhga8U3dAU' })
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyBNRWW7vqg8E6TPvFFc3Tq6Exhga8U3dAU' }),
+    AngularFireModule.initializeApp(environment.firebase), // firebase
+    AngularFirestoreModule  // firebase
   ],
   providers: [],
   bootstrap: [AppComponent]

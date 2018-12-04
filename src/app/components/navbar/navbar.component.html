@@ -7,11 +7,11 @@
   </button>
 
   <div class="navbar-collapse collapse" id="minavbar" [class.show]="show">
-    <ul class="navbar-nav mr-auto text-center">
+    <ul class="navbar-nav mr-auto text-center text-lg-left">
       <li (click)="toggleCollapse()" class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['home']">Inicio</a></li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tabla-De-Contenido</a>
-        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+        <div class="dropdown-menu text-center text-lg-left" x-placement="bottom-start">
           <a class="dropdown-item" [routerLink]="['main']">Introducción</a>
           <a class="dropdown-item" [routerLink]="['main']">Antecedentes</a>
           <a class="dropdown-item" [routerLink]="['main']">Planteamiento del problema</a>
@@ -26,7 +26,7 @@
       <li (click)="toggleCollapse()" class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['theory']">Marco-Teorico</a></li>
       <li class="nav-item dropdown show">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Desarrollo</a>
-        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+        <div class="dropdown-menu text-center text-lg-left" x-placement="bottom-start">
           <a class="dropdown-item" [routerLink]="['developing']">Introducción</a>
           <a class="dropdown-item" [routerLink]="['developing']">Casos de uso de negocio y sistema</a>
           <div class="dropdown-divider"></div>

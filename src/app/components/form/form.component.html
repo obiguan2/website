@@ -1,0 +1,183 @@
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate class="row">
+  <label class="col-12 m-0 pt-2 text-secondary">DATOS DE VIAJE : </label>
+  <!-- TIPO -->
+  <div class="form-group col-12 m-0">
+        <div class="text-secondary">Tipo de viaje : </div>
+        <div *ngFor="let tipo of tipos" class="custom-control custom-radio custom-control-inline">
+            <input
+              [(ngModel)]="usuario.tipo"
+              type="radio"
+              name="tipos"
+              [id]="tipo"
+              [value]="tipo"
+              class="custom-control-input"
+              required
+            />
+            <label class="custom-control-label" [for]="tipo">{{ tipo }}</label>
+        </div>
+  </div>
+  <!-- ORIGEN -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Origen de : </div>
+      <select 
+          class="form-control" 
+          [(ngModel)]="usuario.origen"
+          name="origen"
+          required
+      >
+          <option value="">Seleccione un origen : </option>   
+          <option *ngFor="let origen of origenes" [value]="origen.nombre">{{origen.nombre}}</option>
+      </select>
+  </div>
+  <!-- DESTINO -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Destino a : </div>
+      <select
+          class="form-control"
+          [(ngModel)]="usuario.destino"
+          name="destino"
+          required
+      >
+          <option value="">Seleccione un destino : </option>
+          <option *ngFor="let destino of destinos" [value]="destino.nombre">{{
+          destino.nombre
+          }}</option>
+      </select>
+  </div>
+  <!-- FECHA SALIDA -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Fecha de salida : </div>
+      <input 
+      type="date" 
+      class="form-control" 
+      name="fecha"
+      [(ngModel)]="usuario.fecha"
+      #fecha="ngModel"
+      required
+      />
+  </div>
+  <!-- NUMERO DE BOLETOS -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Numero de Boletos : </div>
+      <input 
+          type="number"
+          class="form-control"
+          name="nboletos"
+          [value]="1"
+          min="1"
+          max="10"
+          pattern="^[0-9]+"
+          [(ngModel)]="usuario.nboletos"
+          #nboletos="ngModel"
+          required
+      />
+  </div>
+  <label class="col-12 pt-2 m-0 text-secondary">DATOS PERSONALES : </label>
+  <!-- NOMBRE -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Nombre : </div>
+          <input
+          class="form-control"
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          [(ngModel)]="usuario.nombre"
+          minlength="5"
+          required
+          #nombre="ngModel"
+          />
+          <!-- error nombre -->
+          <small *ngIf="nombre.errors?.required">Este campo es requerido.</small>
+          <small *ngIf="nombre.errors?.minlength">
+          Por los menos {{ nombre.errors.minlength.requiredLength }} caracteres.
+          </small>
+  </div>
+      <!-- APELLIDO -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Apellido : </div>
+          <input
+          class="form-control"
+          type="text"
+          placeholder="Apellido"
+          name="apellido"
+          [(ngModel)]="usuario.apellido"
+          required
+          #apellido="ngModel"
+          />
+          <!-- error apellido -->
+          <small *ngIf="apellido.errors?.required">Este campo es requerido</small>
+  </div>
+  <!-- CORREO -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">Correo : </div>
+      <input
+          class="form-control"
+          type="email"
+          placeholder="Correo electrónico"
+          name="correo"
+          [(ngModel)]="usuario.correo"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          #correo="ngModel"
+      />
+      <!-- Expresion regular para validar el correo PATTERN -->
+      <!-- error email -->
+      <small *ngIf="correo.errors?.required">Este campo es requerido</small>
+      <small *ngIf="correo.errors?.pattern">El campo no tiene formato</small>
+  </div>
+  <!-- NIT -->
+  <div class="form-group col-12 col-md-6 m-0">
+      <div class="text-secondary">CI, Pasaporte o Nit : </div>
+      <input 
+          type="text" 
+          class="form-control" 
+          placeholder="CI, Pasaporte o Nit" 
+          name="nit"
+          [(ngModel)]="usuario.nit"
+          #nit="ngModel"
+          pattern="^(([A-Z]{3})([-]?)(\d{6,7})([-]?)([A-Z]{1}))$|^((\d{7,8}))$"
+          required
+      />
+      <!--^[0-9,$]*$ -->
+      <!-- error nit -->
+      <small *ngIf="nit.errors?.required">Este campo es requerido</small>
+      <small *ngIf="nit.errors?.pattern">El campo no tiene formato</small>
+  </div>
+  
+  <div class="form-group">
+      <div class="input-group col-md-8">
+          <button
+          [disabled]="!forma.valid"
+          type="submit"
+          class="btn btn-outline-primary"
+          data-toggle="modal"
+          data-target="#demoModal"
+          >
+          Guardar
+          </button>
+      </div>
+  </div>
+  <!-- modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="demoModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Datos guardados exitosamente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>DEBE GUARDAR LOS SIGUIENTES DATOS</p>
+                <p>Nit : <small> - </small></p>
+                <p>Codigo : <label class="display-4">{{ codigo }}</label></p>
+                <span class="text-danger"><small>NOTA: Guarde muy bien su codigo</small></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- fin modal -->
+</form>

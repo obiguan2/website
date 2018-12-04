@@ -1,0 +1,30 @@
+<h1 class="mx-auto animated fadeIn"><span class="text-muted">Empresa </span>OBIGUAN</h1>
+<h5 class="mx-auto animated">LISTA DE VENTA Y RESERVA DE BOLETOS</h5>
+
+
+
+<div>
+  <div *ngIf="users.length > 0; else nousers">
+    <div class="list-group list-group-item-secondary">
+      <div class="list-group-item" *ngFor="let user of users"> 
+          <span>Nombre : <small>{{ user.nombre }}</small> </span> <br>
+          <span>Apellido: <small>{{ user.apellido }}</small></span> <br>
+          <span>Nit: <small>{{ user.nit }}</small></span><br>
+          <span>Codigo: <small>{{ user.codigo }}</small></span>
+          <div>
+            <button class="btn btn-danger" (click)="eliminarUser( $event, user)">Eliminar</button>
+            <button class="btn btn-success" (click)="editarUser( $event, user)">Editar</button>
+            <button class="btn btn-info" (click)="ocultar()">Ocultar</button>
+          </div>
+          <div *ngIf="editando && editandoUser.id == user.id">
+            <app-form-actualizar></app-form-actualizar>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #nousers>
+    <p>No hay users aun. (ACTUALIZAR)</p>
+  </ng-template>
+
+</div>
