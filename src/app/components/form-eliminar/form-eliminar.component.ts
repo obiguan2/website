@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 // firebase
 import { UserService } from '../../services/user.service';
+import { User1 } from '../../models/user1';
 
 @Component({
   selector: 'app-form-eliminar',
@@ -13,7 +14,7 @@ export class FormEliminarComponent implements OnInit {
   mensaje: string;
   users = [];
 
-  usuario: Object = {
+  usuario: User1 = {
     nit: null,
     codigo: null
   }

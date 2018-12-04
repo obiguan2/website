@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 // firebase
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { User1 } from '../../models/user1';
 
 @Component({
   selector: 'app-form-buscar',
@@ -16,7 +17,7 @@ export class FormBuscarComponent implements OnInit {
   sw : boolean;
   mensaje: string = "";
   // datos
-  usuario: Object = {
+  usuario: User1 = {
     nit: null,
     codigo: null
   }
