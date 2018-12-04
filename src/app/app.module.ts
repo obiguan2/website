@@ -27,7 +27,8 @@ import { AngularFireModule } from '@angular/fire';  // para conectarnos
 import { environment } from '../environments/environment';  // donde se encuentra nuestras configuraciones
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormActualizarComponent } from './components/form-actualizar/form-actualizar.component';
-import { FormActualizar1Component } from './components/form-actualizar1/form-actualizar1.component'; // para editar eliminar etc
+import { FormActualizar1Component } from './components/form-actualizar1/form-actualizar1.component';
+import { FormCreditCardComponent } from './components/form-credit-card/form-credit-card.component'; // para editar eliminar etc
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FormActualizar1Component } from './components/form-actualizar1/form-act
     FormEliminarComponent,
     ListComponent,
     FormActualizarComponent,
-    FormActualizar1Component
+    FormActualizar1Component,
+    FormCreditCardComponent
   ],
   imports: [
     BrowserModule,
