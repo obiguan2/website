@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
 
   estado: boolean = false;  
   // datos formulario
-  @Input() usuario: Object = {
+  @Input() usuario: User = {
     tipo: "",
     origen: "",
     destino: "",

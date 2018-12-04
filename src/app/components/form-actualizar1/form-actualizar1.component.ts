@@ -17,7 +17,7 @@ export class FormActualizar1Component implements OnInit {
   editandoUser: User;
   
   // datos formulario
-   usuario: Object = {
+   usuario: User = {
     tipo: "",
     origen: "",
     destino: "",
