@@ -149,7 +149,7 @@
           <button
           [disabled]="!forma.valid"
           type="submit"
-          class="btn btn-outline-primary"
+          class="btn btn-outline-dark"
           data-toggle="modal"
           data-target="#demoModal"
           >
@@ -162,14 +162,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Datos guardados exitosamente</h5>
+                <h5 class="modal-title">DATOS GUARDADOS EXITOSAMENTE!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>DEBE GUARDAR LOS SIGUIENTES DATOS</p>
-                <p>Nit : <small> - </small></p>
+                <p>Debe guardar el siguiente codigo, si quiere hacer modificación o retirar su reserva del boleto</p>
                 <p>Codigo : <label class="display-4">{{ codigo }}</label></p>
                 <span class="text-danger"><small>NOTA: Guarde muy bien su codigo</small></span>
             </div>

@@ -29,6 +29,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormActualizarComponent } from './components/form-actualizar/form-actualizar.component';
 import { FormActualizar1Component } from './components/form-actualizar1/form-actualizar1.component';
 import { FormCreditCardComponent } from './components/form-credit-card/form-credit-card.component'; // para editar eliminar etc
+// video
+import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { FormCreditCardComponent } from './components/form-credit-card/form-cred
     HttpModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyBNRWW7vqg8E6TPvFFc3Tq6Exhga8U3dAU' }),
     AngularFireModule.initializeApp(environment.firebase), // firebase
-    AngularFirestoreModule  // firebase
+    AngularFirestoreModule,  // firebase
+    YoutubePlayerModule // video
   ],
   providers: [],
   bootstrap: [AppComponent]

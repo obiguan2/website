@@ -1,25 +1,113 @@
-<h2>Desarrollo</h2>
-<h3>Introducción</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates rem obcaecati eveniet facere quasi. Illum dolores vel adipisci dolore sequi! Harum dicta, magni temporibus hic facilis quaerat cum fugit cupiditate!Incidunt, officia. Beatae exercitationem magnam veritatis provident unde! Aperiam, a quam. Vero, in libero, blanditiis assumenda dolorum totam accusamus sed quibusdam voluptate possimus rem minima numquam quaerat temporibus deserunt minus!</p>
+<h2>DESARROLLO</h2>
+<h3>INTRODUCCIÓN</h3>
+<p>En los siguientes modelos realizaremos distintas formas de mostrar el modelamiento del sistema de venta y reserva de boletos, sin la necesidad de un cajero ya que sera online se podra modificar la cantidad de boletos y retirar la reserva igualmente.</p>
+
 <h3>Casos de uso de negocio y sistema</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis possimus minus sunt dolorem nihil vitae at accusantium? Earum eum necessitatibus soluta voluptate porro ipsa tempora magnam qui quis! Dolor, tempore.
-Labore eius quasi beatae incidunt optio. Ipsum natus ad saepe nam quia, mollitia perferendis tenetur totam molestiae recusandae? Quaerat at voluptas odit magni, cum sequi blanditiis! Pariatur dignissimos modi doloremque.
-Iusto veniam impedit, quasi accusantium voluptatum atque quis expedita ut ullam recusandae quo laudantium id magnam ab, excepturi explicabo earum facere, eum reprehenderit voluptatem accusamus nam ipsum? Iste, nesciunt ad!</p>
+<img src="assets/images/modelado-del-negocio.jpg" alt="modelado-del-negocio" class="img-fluid mx-auto d-block h-30">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Descripción</th>
+      <th scope="col">Permite abrir una cuenta de cliente de viaje la cual le permite realizar cualquiera operación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Flujo básico</th>
+      <td>El cliente solicita la formulario de inscripción al vendedor o jefe  en apertura de cuenta, este le entrega dicho documento para ser llenado, si la cuenta que se desea abrir no es invalida, el cliente deberá llenar en el formulario de inscripción los datos del otro cliente, después se le entregara el documento al especialista y este verificara con los documentos la cuenta que se va abrir no es individual o el documento si la cuenta que se va abrir es individual luego se genera user y contraseña o pin </td>
+
+    </tr>
+    <tr>
+      <th scope="row">Flujo alternatvo</th>
+      <td>Si la verificación de formulario de inscripción fue incorrecta se rechaza dicha boleta y se le informa al cliente.</td>
+    </tr>
+  </tbody>
+</table>
 <h3>DIAGRAMAS UML</h3>
-<h4>Diagramas de actividad</h4>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur libero rerum molestiae ipsam ex dolore quidem quisquam, maiores illo magni vel eveniet dolor, debitis sapiente laboriosam unde. Error, aliquam voluptates.Nulla voluptatum deleniti ullam velit impedit sed incidunt id tenetur maiores laboriosam aliquid odit, optio pariatur labore illum saepe omnis nisi qui assumenda, aliquam nihil dolores neque. Consequuntur, quibusdam non.</p>
-<h4>Diagramas de maquina de estados</h4>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odio animi voluptatum perspiciatis saepe sed soluta voluptate magni praesentium illo omnis debitis explicabo iste, iure minus odit sint tempora eos.Cupiditate laborum, fuga labore, facere blanditiis adipisci nihil dolore quaerat commodi quidem excepturi consectetur porro illo quis perspiciatis, impedit nam saepe! Consequatur soluta illum enim nostrum repudiandae, suscipit sequi rerum?</p>
+
+<h4>Diagramas casos de uso</h4>
+<img src="assets/images/casos-de-uso.jpg" alt="casos-de-uso" class="img-fluid mx-auto d-block">
+<h4>Diagramas casos de uso tipo texto</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"><strong>Nombre de caso de uso:</strong> Registrar nuevo usuario como pasajero</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><strong>Área:</strong> Registros</th>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Actor(es):</strong> Cliente, sistema.</th>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Resumen:</strong> Permite que el cliente proceda a registrarse con el dominio de pasajero, para tener la facultad de realizar reservas y ventas de boletos. El proceso da curso cuando el usuario cumple todos los requisitos y es posible su registro.</th>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Tipo:</strong> Primario</th>
+    </tr>
+  </tbody>
+</table>
+<p>CURSO NORMAL DEL EVENTO</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"><strong>ACCIONES DEL ACTOR</strong></th>
+      <th scope="col"><strong>RESPUESTA DEL SISTEMA</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1. El cliente ingresa al sitio web.</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>2.Despliega menú.</td>
+    </tr>
+    <tr>
+      <th scope="row">3. Selecciona la opción de Iniciar sesión. <br>
+            4. Selecciona la opción de Nuevo Pasajero
+            </th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>5. Muestra interfaz de Nuevo Usuario. <br>
+            6. Solicita los datos del usuario
+            </td>
+    </tr>
+    <tr>
+      <th scope="row">7. Ingresa los datos como ser: nombres, apellidos, ci, correo.</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>8. Verifica los datos ingresados <br>
+        9. Solicita la confirmación</td>
+    </tr>
+    <tr>
+      <th scope="row">10. Confirma los datos de usuario.</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>11. Despliega mensaje de aceptación.</td>
+    </tr>
+    <tr>
+      <th scope="row">12. Inicia sesión como pasajero.</th>
+      <td>13. Se habilita la opción de reserva y ventas.</td>
+    </tr>
+  </tbody>
+
+</table>
 <h4>Diagramas de secuencia</h4>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut exercitationem sed labore dicta assumenda ducimus facere ea quod eum, repudiandae est facilis similique quam beatae dignissimos necessitatibus, nostrum ullam.Repudiandae, eius cumque, dignissimos architecto, aperiam omnis magnam impedit nobis quaerat facere consequatur veritatis reprehenderit saepe dolorum illum aut! Harum esse autem id repellendus quia alias eaque quasi tenetur nisi.</p>
-<h4>Diagramas de comunicación</h4>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis pariatur quas, sint soluta excepturi iure ut, numquam praesentium, dolorum at accusamus magnam dicta porro similique. Provident temporibus asperiores nam nihil!Repudiandae, accusantium iure? Voluptatibus itaque libero veniam magnam recusandae sapiente eos reprehenderit quia cupiditate fuga commodi soluta hic blanditiis voluptas et odit obcaecati numquam, harum reiciendis culpa laborum facilis officia.</p>
-<h4>Diagramas de modelo</h4>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque saepe debitis non nulla eveniet! Quia fuga maxime aliquid architecto fugit? Enim temporibus quibusdam veniam neque sed illo laudantium quasi.Impedit alias ea iusto veritatis qui? Nobis minus ea reprehenderit accusantium, quaerat repellat ut sunt aliquid inventore ipsa recusandae fugit eaque! Laudantium, quibusdam nam ipsa officia obcaecati blanditiis voluptatem hic.</p>
-<h4>Diagramas de tiempo</h4>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sint dolorum ratione pariatur dolor mollitia repellendus optio. Possimus unde omnis libero commodi reprehenderit tempore ab natus iusto. Saepe, possimus suscipit.Illum hic necessitatibus officia tenetur exercitationem. Sequi voluptatem illum ipsa velit vitae explicabo molestiae repudiandae dolor deserunt consequatur! Officia aperiam nobis molestias repellat harum amet exercitationem blanditiis dolor, eligendi temporibus.</p>
+<img src="assets/images/diagrama-de-secuencia.jpg" alt="diagrama-de-secuencia" class="img-fluid mx-auto d-block">
+
 <h4>Diagramas de clase</h4>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil repellat quod quia dolore animi quidem. Eos, rem minima, veniam, vitae magnam ullam labore atque pariatur reprehenderit commodi adipisci quos omnis.Sequi qui consequuntur veniam impedit, voluptates possimus quasi laboriosam saepe autem laudantium consectetur. Ipsam quia repudiandae optio, deleniti nam omnis blanditiis nihil nostrum voluptates, dignissimos officiis quas, in eius mollitia.</p>
-<h4>Diagramas de objetos</h4>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ea, facere, eveniet explicabo dolorum, repellat quo expedita nemo maiores dolorem natus velit iste sapiente! Ipsum labore nam iste cupiditate rerum!Laudantium, natus, animi vero totam asperiores cum ab ipsa, dolorem eligendi consequuntur laborum beatae mollitia. Enim saepe maxime possimus accusamus, dolores est consectetur tempore ullam facere placeat sit veritatis explicabo!</p>
+<img src="assets/images/diagrama-de-clases.jpg" alt="diagrama-de-clases" class="img-fluid mx-auto d-block">
+
+<h4>Diagramas de modelo</h4>
+<img src="assets/images/diagrama-de-secuencia2.jpg" alt="diagrama-de-secuencia2" class="img-fluid mx-auto d-block">
 <br>

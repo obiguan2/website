@@ -1,13 +1,57 @@
 <h2>Marco teorico</h2>
 <h3>Metodologia de investigacion</h3>
-<p>	Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis assumenda iure enim? Minus dicta iusto quo amet, voluptates officiis cupiditate aliquam ea, possimus, dolores aut modi aliquid nesciunt vel temporibus?
-Architecto aperiam at ullam sit voluptate libero nulla similique neque consequatur facere blanditiis suscipit vel, temporibus, autem voluptas, quasi perferendis? Recusandae possimus magnam quisquam eveniet porro ipsum. Facilis, iure provident?
-Dolor eos voluptatum voluptate amet repellat perferendis obcaecati ipsa incidunt nulla reprehenderit dolore facilis similique maxime minima, ad architecto eveniet nostrum ducimus debitis porro! Eveniet id quidem debitis quae recusandae.
-Consequuntur quae ex perspiciatis fuga laudantium amet placeat recusandae animi, veritatis perferendis neque nihil illum officia dolorem quibusdam similique possimus totam quidem voluptas tempore. Quam veniam natus similique quisquam odio.
-Et voluptatem alias molestias facere culpa provident autem repellat magnam explicabo aliquid consectetur eum magni, tempora asperiores hic ea in recusandae dolores consequuntur error architecto aut eos. Excepturi, quo repellat.</p>
+<p>Es  precisa  la  aplicación  de  un  conjunto  de  conceptos,  estándares  y metodologías así tenemos:</p>
+    <p>
+		<strong>UML (Lenguaje Unificado de Modelado)</strong> esta notación nos permite modelar, analizar y diseñar el software de manera tal que se pueda documentar y construir. Hay  que  tomar  en  cuenta  que  en  el  modelado  se  pueden  incluir  aspectos conceptuales tales como procesos de negocio y funciones del sistema.</p>
+		<!-- VIDEO -->
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<youtube-player
+					[videoId]="id"
+					(ready)="savePlayer($event)"
+					(change)="onStateChange($event)">
+				</youtube-player>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-success" (click)="playVideo()">Play</button>
+				<button type="button" class="btn btn-danger" (click)="pauseVideo()">Pause</button>
+			</div>
+		</div>
+		<!-- FIN -->
 <h3>Antescedentes</h3>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic iste quisquam obcaecati? Earum quibusdam nam magnam est repellat, repellendus nobis, necessitatibus, cupiditate incidunt quod ex doloribus ullam ad dolor. Illo.
-Omnis, voluptatum molestiae minus, a, obcaecati ad facere ducimus ut adipisci incidunt vitae quae! Repellendus provident error velit beatae nisi saepe nulla dolore reprehenderit, id cum. Velit temporibus maxime dicta!
-Molestiae velit nostrum at culpa totam quos aliquam perspiciatis, architecto unde delectus ab, porro nisi libero animi assumenda molestias est officiis? Rem minus cumque consequuntur quos, reiciendis deserunt quo aut.</p>
-<h3></h3>
+<p>
+        En la Cooperativa de Transportes “Obiguan.com” se ha detectado la falta de control en la creación de rutas, encomiendas, reservación y  venta de tickets  ya que  estas tareas se las realizaba de forma manual. No existían reservaciones de asientos lo cual provocaba que  haya doble  venta de  asientos y  por ende  ocasionaba perdidas  de ventas así como de clientes. Para dar solución a todos estos problemas se propone la implementación de un sistema informático que permita el control de las actividades primordiales de la Cooperativa, haciendo una reserva de boletos.
+</p>
+<h2>MODELO AMBIENTAL</h2>
+<p><strong>a)</strong>	Declaración de Propósitos: Desarrollar un sistema que gestione la venta y reserva de boletos en una terminal de buses. El usuario debe darse de alta (Datos bancarios y personales) mediante el administrador del sistema o bien llenando un formulario a través del sitio web donde se le solicitara sus datos personales como ci, nombre completo, dirección y datos de cuenta bancaria, Una vez que el Usuario sea aceptado por el sistema el usuario podrá consultar los datos de  viajes ,horarios, disponibilidad de asientos y precios, para después poder escoger entre realizar reserva o realizar la compra de pasaje, llenando el formulario correspondiente donde introducirá su destino , la hora, día de viaje y la cantidad de boletos que comprara o reservara, el usuario solo podrá modificar su reserva o venta  durante  24 horas después de haber realizado la compra o reserva, además el cliente podrá dar de baja su cuenta o bien realizar modificaciones.</p>
+<p><strong>b)</strong> diagrama de Contexto</p>
+<img src="assets/images/diagrama-de-contexto.jpg" alt="diagrama-de-contexto" class="img-fluid mx-auto d-block">
+<p><strong>c)</strong> Lista de Acontecimientos</p>
+<ul>
+    <li>Registrar datos de Usuario.</li>
+	<li>Registrar Venta.</li>
+	<li>Registrar Reserva.</li>
+	<li>Registrar Horarios.</li>
+	<li>Registrar Precios.</li>
+	<li>Registrar Destinos.</li>
+	<li>Informe de horarios.</li>
+	<li>Informe de Precios.</li>
+	<li>Informe de disponibilidad de asientos.</li>
+	<li>Informe  de Reservas.</li>
+	<li>Informe de Ventas.</li>
+	<li>Informe de Estadísticas.</li>
+	<li>Modificar Datos Usuario.</li>
+</ul>
+<h4>DIAGRAMA DE FLUJO DE DATOS POR NIVELES</h4>
+<h5>NIVEL 0</h5>
+<img src="assets/images/diagrama1.jpg" alt="diagrama1" class="img-fluid mx-auto d-block">
+<h5>NIVEL 1</h5>
+<img src="assets/images/diagrama2.jpg" alt="diagrama2" class="img-fluid mx-auto d-block">
+<img src="assets/images/diagrama3.jpg" alt="diagrama3" class="img-fluid mx-auto d-block">
+<h5>NIVEL 2</h5>
+<img src="assets/images/diagrama4.jpg" alt="diagrama4" class="img-fluid mx-auto d-block">
+<img src="assets/images/diagrama5.jpg" alt="diagrama5" class="img-fluid mx-auto d-block">
+<img src="assets/images/diagrama6.jpg" alt="diagrama6" class="img-fluid mx-auto d-block">
+<h5>NIVEL 3</h5>
+<img src="assets/images/diagrama7.jpg" alt="diagrama7" class="img-fluid mx-auto d-block">
 <br>
