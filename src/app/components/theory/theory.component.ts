@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./theory.component.css']
 })
 export class TheoryComponent implements OnInit {
-  // https://www.youtube.com/watch?v=9DBe28ylqmk
-  id = '9DBe28ylqmk';
+  // https://www.youtube.com/watch?v=JrIP_pP_mR0
+  id = 'JrIP_pP_mR0';
   private player;
   private ytEvent;
 
