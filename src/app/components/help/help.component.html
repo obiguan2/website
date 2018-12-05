@@ -1,0 +1,11 @@
+<!-- VIDEO -->
+<div class="row animated pt-3">
+  <div class="col-12 col-lg-6">
+    <youtube-player
+      [videoId]="id"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)">
+    </youtube-player>
+  </div>
+</div>
+<!-- FIN -->

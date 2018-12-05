@@ -31,6 +31,7 @@ import { FormActualizar1Component } from './components/form-actualizar1/form-act
 import { FormCreditCardComponent } from './components/form-credit-card/form-credit-card.component'; // para editar eliminar etc
 // video
 import { YoutubePlayerModule } from 'ngx-youtube-player';
+import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { YoutubePlayerModule } from 'ngx-youtube-player';
     ListComponent,
     FormActualizarComponent,
     FormActualizar1Component,
-    FormCreditCardComponent
+    FormCreditCardComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
