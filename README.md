@@ -26,3 +26,49 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # website
+ANGULAR (VPS)
+apt update
+apt install nodejs
+apt install npm
+npm install -g typescript
+npm install -g @angular/cli
+
+GITHUB (VPS)
+cd /var/www/html
+git clone https://github.com/obiguan2/website.git
+cd website
+npm install
+git pull    (actualiza los repositorios)
+
+
+NGINX (VPS)
+https://medium.com/@balramchavan/deploy-angular-application-in-nginx-server-on-digitalocean-ubuntu-droplet-28380524811e
+https://arjunphp.com/deploy-angular-app-production-nginx/
+apt update
+apt install nginx
+ufw allow "Nginx Full"
+
+cd /etc/nginx/sites-available/
+nano default
+	
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+ 
+    root /var/www/html/website/dist/website;
+    index index.html index.htm index.nginx-debian.html;
+ 
+    server_name _;
+ 
+    location / {
+        try_files $uri $uri/ /index.html =404;
+    }
+}
+
+systemctl restart nginx
+
+cd /var/www/html/website/
+ng build --prod
+
+(actualizar repositorio en VPS) si no da git pull
+git fetch --all && git reset --hard origin/master
